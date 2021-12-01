@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Головна сторінка
+{% endblock title %}
+
+{% block body %}
+    <div class="container mt-5">
+        {% if posts|length > 0 %}
+            {% for el in posts %}
+                <div class="alert alert-info">
+                    <h2>{{ el.title }}</h2>
+                    <p>{{ el.intro }}</p>
+                    <p><b>Дата: {{ el.date.date() }}</b></p>
+                    <h3 style="text-align: end; font-style:italic">"{{ el.author }}"</h3>
+                    <a href="/posts/{{ el.id }}" class="btn btn-warning">Детальніше</a>
+                </div>
+            {% endfor %}
+        {% else %}
+                <p>Тут поки ще нічого немає</p>
+        {% endif %}
+{% endblock body %}

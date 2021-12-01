@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Редагувати пост
+{% endblock title %}
+
+{% block body %}
+    <div class="container mt-5">
+        <form method="post">
+            <label for="title">Назва</label>
+            <input type="text" name="title" id="title" value="{{ post.title }}" class="form-control"><br>
+            <label for="text">Текст</label>
+            <textarea name="text" id="text" class="form-control">{{ post.text }}</textarea><br>
+            <input type="submit" class="btn btn-success" value="Оновити">
+        </form>
+{% endblock body %}
